@@ -1,608 +1,720 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andres Valencia | Portafolio web para negocios y profesionales</title>
-  <meta
-    name="description"
-    content="Portafolio de paginas web para negocios y profesionales: plantillas por sector, implementaciones reales y una propuesta pensada para conseguir clientes."
-  />
-  <meta property="og:title" content="Andres Valencia | Portafolio web para negocios y profesionales" />
-  <meta
-    property="og:description"
-    content="Plantillas por sector, sitios reales y una estructura comercial pensada para que tu negocio se vea mejor y convierta mas."
-  />
+  <title>Andres Valencia | Productos digitales para negocios reales</title>
+  <meta name="description" content="Portafolio de Andres Valencia: PropTech Manager, BarberIA y paginas web comerciales para pymes." />
+  <meta property="og:title" content="Andres Valencia | Productos digitales para negocios reales" />
+  <meta property="og:description" content="Productos y sitios reales: PropTech Manager, BarberIA y Monica Valencia como demo web para pymes." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
-  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="assets/css/site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080b12;
+      --bg-2: #0e1420;
+      --panel: rgba(255,255,255,.075);
+      --panel-strong: rgba(255,255,255,.12);
+      --card: #f7f8fb;
+      --card-2: #ffffff;
+      --text: #f4f7fb;
+      --muted: #a6b0c3;
+      --ink: #111827;
+      --ink-soft: #5b6578;
+      --line: rgba(255,255,255,.12);
+      --line-dark: rgba(17,24,39,.1);
+      --accent: #80ffdb;
+      --accent-2: #67e8f9;
+      --accent-dark: #0e7490;
+      --radius: 28px;
+      --max: min(1160px, 92vw);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(128,255,219,.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(103,232,249,.12), transparent 32%),
+        linear-gradient(180deg, var(--bg), #090d15 48%, #f2f4f8 48%, #f2f4f8 100%);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: var(--max); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(8,11,18,.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07111c;
+      font-family: "Space Grotesk", sans-serif;
+      box-shadow: 0 18px 42px rgba(103,232,249,.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 13px 19px;
+      font-size: .93rem;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06111b;
+      box-shadow: 0 20px 42px rgba(103,232,249,.24);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border-color: var(--line);
+    }
+    .btn-dark {
+      background: #0f172a;
+      color: white;
+    }
+    .btn-light {
+      background: white;
+      color: #0f172a;
+      border-color: var(--line-dark);
+    }
+
+    .hero {
+      padding: 86px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(340px, .9fr);
+      gap: 52px;
+      align-items: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      margin: 0 0 18px;
+    }
+    .kicker::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    h1, h2, h3 { font-family: "Space Grotesk", Inter, sans-serif; }
+    h1 {
+      font-size: clamp(3.3rem, 7vw, 6.8rem);
+      line-height: .92;
+      letter-spacing: -.08em;
+      margin: 0 0 24px;
+      max-width: 11ch;
+    }
+
+    .hero-lead {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.24rem);
+      max-width: 62ch;
+      margin: 0 0 30px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .hero-board {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.055));
+      padding: 18px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.32);
+    }
+
+    .board-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      padding: 8px 8px 16px;
+    }
+
+    .live-pill {
+      color: #052e25;
+      background: var(--accent);
+      border-radius: 999px;
+      padding: 5px 10px;
+    }
+
+    .screen {
+      border-radius: 26px;
+      background:
+        linear-gradient(135deg, rgba(128,255,219,.22), rgba(103,232,249,.08)),
+        #101827;
+      padding: 26px;
+      min-height: 210px;
+      position: relative;
+      overflow: hidden;
+    }
+    .screen::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      bottom: -70px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: rgba(128,255,219,.18);
+    }
+    .screen-label {
+      display: block;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 12px;
+    }
+    .screen strong {
+      position: relative;
+      z-index: 1;
+      display: block;
+      max-width: 11ch;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.5rem;
+      line-height: .96;
+      letter-spacing: -.06em;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.07);
+      padding: 14px;
+      min-height: 126px;
+    }
+    .mini-card span {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(128,255,219,.13);
+      color: var(--accent);
+      font-weight: 900;
+      font-size: .78rem;
+      margin-bottom: 18px;
+    }
+    .mini-card p {
+      margin: 0;
+      color: #d5dbea;
+      font-size: .86rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .proof-strip {
+      padding: 0 0 72px;
+      color: var(--text);
+    }
+    .proof-grid {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.07);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+    }
+    .proof-item {
+      padding: 25px;
+      border-right: 1px solid var(--line);
+    }
+    .proof-item:last-child { border-right: 0; }
+    .proof-label {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: .77rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .proof-value {
+      margin: 0;
+      font-size: 1.12rem;
+      font-weight: 900;
+    }
+
+    .light-section {
+      color: var(--ink);
+      padding: 88px 0;
+      background: #f2f4f8;
+    }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+    .section-heading .kicker { color: var(--accent-dark); }
+    .section-title {
+      margin: 0;
+      font-size: clamp(2.2rem, 4.7vw, 4.4rem);
+      line-height: .95;
+      letter-spacing: -.06em;
+      max-width: 12ch;
+    }
+    .section-copy {
+      max-width: 48ch;
+      color: var(--ink-soft);
+      margin: 0;
+      font-weight: 550;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .case-card {
+      min-height: 430px;
+      border: 1px solid var(--line-dark);
+      border-radius: 30px;
+      background: var(--card-2);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 18px 46px rgba(15,23,42,.06);
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+    .case-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 70px rgba(15,23,42,.11);
+    }
+    .case-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 42px;
+    }
+    .case-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: #eef2f7;
+      color: #0f172a;
+      font-weight: 900;
+      font-size: .84rem;
+    }
+    .case-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: #ecfeff;
+    }
+    .case-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.72rem;
+      letter-spacing: -.04em;
+      line-height: 1.05;
+    }
+    .case-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: .97rem;
+      font-weight: 520;
+    }
+    .case-footer {
+      margin-top: auto;
+      padding-top: 28px;
+      display: grid;
+      gap: 13px;
+    }
+    .badge {
+      width: fit-content;
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: #e8fff8;
+      color: #047857;
+    }
+    .badge.open { background: #ecfeff; color: #0e7490; }
+
+    details.demo-disclosure {
+      border: 1px solid var(--line-dark);
+      border-radius: 18px;
+      padding: 12px 14px;
+      background: #f8fafc;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: #0f172a;
+    }
+    .demo-list {
+      display: grid;
+      gap: 8px;
+      padding-top: 12px;
+    }
+    .demo-list a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--accent-dark);
+      font-weight: 850;
+    }
+
+    .process-section {
+      background: #0c1220;
+      color: var(--text);
+      padding: 86px 0;
+    }
+    .process-layout {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .process-title {
+      margin: 0;
+      font-size: clamp(2.1rem, 4.2vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,255,255,.07);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+    }
+    .step strong {
+      color: var(--accent);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .step span { color: #d3dae7; font-weight: 600; }
+
+    .final-section {
+      background: #f2f4f8;
+      color: var(--ink);
+      padding: 92px 0;
+    }
+    .final-cta {
+      border-radius: 36px;
+      padding: clamp(30px, 5vw, 58px);
+      background:
+        radial-gradient(circle at top right, rgba(128,255,219,.28), transparent 30%),
+        #0f172a;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .final-cta h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2.1rem, 4.2vw, 4.1rem);
+      line-height: .98;
+      letter-spacing: -.06em;
+      max-width: 14ch;
+    }
+    .final-cta p {
+      color: #c4ccda;
+      max-width: 56ch;
+      margin: 0;
+      font-weight: 560;
+    }
+
+    footer {
+      background: #f2f4f8;
+      color: #647084;
+      border-top: 1px solid var(--line-dark);
+      padding: 28px 0 40px;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .process-layout,
+      .final-cta,
+      .section-heading { grid-template-columns: 1fr; display: grid; }
+      .case-grid,
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-item { border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      h1 { max-width: 10ch; }
+      .hero { padding-top: 56px; }
+      .step { grid-template-columns: 1fr; }
+      .case-card { min-height: auto; }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-grid" aria-hidden="true"></div>
-  <div class="page-glow page-glow-a" aria-hidden="true"></div>
-  <div class="page-glow page-glow-b" aria-hidden="true"></div>
-
-  <header class="nav-wrap">
-    <nav class="nav shell" aria-label="Principal">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark">
-          <img
-            class="brand-logo"
-            src="assets/brand/logo-mark.svg"
-            alt="Logo Andres Valencia"
-            width="44"
-            height="44"
-          />
-        </span>
-        <span class="brand-copy">
-          <strong>Andres Valencia</strong>
-          <small>Sitios web con direccion comercial</small>
-        </span>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Navegacion principal">
+      <a class="brand" href="#top" aria-label="Ir al inicio">
+        <span class="brand-mark">AV</span>
+        <span>Andres Valencia</span>
       </a>
-
       <div class="nav-links">
-        <a href="#implementaciones">Implementaciones</a>
-        <a href="#plantillas">Plantillas</a>
-        <a href="#arranque">Oferta</a>
+        <a href="#productos">Productos</a>
         <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
       </div>
-
-      <a
-        class="nav-cta"
-        href="https://wa.me/573007561667?text=Hola,%20quiero%20hablar%20sobre%20mi%20sitio%20web."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Hablar por WhatsApp
-      </a>
+      <a class="btn btn-secondary" href="mailto:pipevv999@gmail.com">Hablemos</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero shell" id="inicio">
-      <div class="hero-copy" data-reveal>
-        <p class="eyebrow">Portafolio para negocios y profesionales</p>
-        <h1>
-          Sitios web que se sienten mas serios,
-          <span>se entienden mas rapido</span>
-          y hacen mas facil que el cliente te escriba.
-        </h1>
-        <p class="hero-lead">
-          Uso una mezcla de estructura comercial, diseno editorial y criterio visual para que cada
-          pagina no solo se vea bien: explique mejor, transmita mas confianza y avance con mas
-          claridad hacia la accion.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#brief">Quiero una propuesta</a>
-          <a class="btn btn-secondary" href="#implementaciones">Ver implementaciones</a>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Andres Valencia</p>
+          <h1>Productos digitales para negocios reales.</h1>
+          <p class="hero-lead">Construyo SaaS, automatizaciones y paginas web comerciales para pymes. Mi foco es convertir procesos que hoy viven en Excel, WhatsApp o memoria en herramientas simples, vendibles y listas para operar.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://proptech-manager.vercel.app" target="_blank" rel="noopener noreferrer">Ver PropTech Manager →</a>
+            <a class="btn btn-secondary" href="#productos">Explorar casos</a>
+          </div>
         </div>
 
-        <div class="hero-proof">
-          <span>Copy con intencion comercial</span>
-          <span>Jerarquia visual mas premium</span>
-          <span>CTA listos para WhatsApp o cotizacion</span>
-        </div>
-
-        <div class="hero-stats">
-          <article class="hero-stat">
-            <small>Plantillas base</small>
-            <strong id="heroTemplateCount">00</strong>
-            <p>estructuras sectoriales listas para personalizar</p>
-          </article>
-          <article class="hero-stat">
-            <small>Implementaciones</small>
-            <strong id="heroImplementationCount">00</strong>
-            <p>casos reales o ya aterrizados a negocio</p>
-          </article>
-          <article class="hero-stat">
-            <small>Demos editables</small>
-            <strong id="heroEditorCount">00</strong>
-            <p>versiones para seguir ajustando sin rehacer todo</p>
-          </article>
-        </div>
-      </div>
-
-      <aside class="hero-aside" data-reveal style="--delay: 1;">
-        <article class="hero-panel hero-panel-profile">
-          <span class="hero-panel-badge">AV</span>
-          <p class="panel-label">Direccion de proyecto</p>
-          <h2>No vendo paginas de relleno. Construyo recorridos que ordenan promesa, confianza y accion.</h2>
-          <p>
-            Mi trabajo no empieza en el color o la animacion. Empieza en entender que debe quedar
-            clarisimo desde el primer pantallazo para que la pagina tenga peso, no solo presencia.
-          </p>
-
-          <div class="hero-panel-lines">
-            <article>
-              <span>Ideal para</span>
-              <strong>negocios locales, marcas personales, consultores y servicios especializados</strong>
-            </article>
-            <article>
-              <span>Lo que cuido</span>
-              <strong>titulares, pruebas de confianza, ritmo visual, CTA y claridad comercial</strong>
-            </article>
+        <aside class="hero-board" aria-label="Casos destacados">
+          <div class="board-toolbar">
+            <span>Work index</span>
+            <span class="live-pill">Live</span>
           </div>
-        </article>
-
-        <article class="hero-panel hero-panel-track">
-          <p class="panel-label">Como se lee este portafolio</p>
-
-          <div class="track-step">
-            <span>01</span>
-            <div>
-              <strong>Implementaciones</strong>
-              <p>Casos donde una base ya se convierte en una pagina con contexto real.</p>
-            </div>
+          <div class="screen">
+            <span class="screen-label">Producto principal</span>
+            <strong>PropTech Manager</strong>
           </div>
-
-          <div class="track-step">
-            <span>02</span>
-            <div>
-              <strong>Plantillas base</strong>
-              <p>Estructuras fuertes para arrancar rapido sin caer en soluciones genericas.</p>
-            </div>
+          <div class="mini-grid">
+            <div class="mini-card"><span>P01</span><p>Gestion de propiedades, clientes, contratos y pagos.</p></div>
+            <div class="mini-card"><span>B02</span><p>BarberIA: agenda y operacion para barberias.</p></div>
+            <div class="mini-card"><span>W03</span><p>Paginas web para pymes con demos reales.</p></div>
           </div>
-
-          <div class="track-step">
-            <span>03</span>
-            <div>
-              <strong>Editor y mantenimiento</strong>
-              <p>Versiones pensadas para seguir corrigiendo oferta, contenido y CTA despues.</p>
-            </div>
-          </div>
-        </article>
-      </aside>
-    </section>
-
-    <section class="insight-band shell" data-reveal>
-      <article class="insight-card">
-        <span class="metric-value">Mas claridad</span>
-        <span class="metric-label">mensaje</span>
-      </article>
-      <article class="insight-card">
-        <span class="metric-value">Mas peso visual</span>
-        <span class="metric-label">presencia</span>
-      </article>
-      <article class="insight-card">
-        <span class="metric-value">Mas confianza</span>
-        <span class="metric-label">decision</span>
-      </article>
-      <article class="insight-card">
-        <span class="metric-value">Mas accion</span>
-        <span class="metric-label">contacto</span>
-      </article>
-    </section>
-
-    <section class="section shell" id="implementaciones">
-      <div class="section-head" data-reveal>
-        <p class="section-label">Implementaciones</p>
-        <h2>Del template al negocio real: aqui es donde la base se convierte en una pagina con voz propia.</h2>
-        <p>
-          Estas piezas muestran lo que mas me interesa que vea un cliente potencial: no solo que
-          puedo disenar una buena base, sino que puedo aterrizarla con copy, tono, enfoque y una
-          direccion visual mucho mas concreta.
-        </p>
-      </div>
-
-      <div class="case-grid" id="implementationGrid">
-        <article class="case-loading">Cargando implementaciones...</article>
-      </div>
-    </section>
-
-    <div class="section-rule" aria-hidden="true"></div>
-
-    <section class="section shell" id="plantillas">
-      <div class="section-head" data-reveal>
-        <p class="section-label">Plantillas base</p>
-        <h2>Bases por sector para avanzar mas rapido sin que el resultado se sienta reciclado.</h2>
-        <p>
-          Las plantillas me sirven para ganar tiempo donde tiene sentido. Pero la meta nunca es
-          dejar una pagina "tipo demo": la meta es usar esa base como un punto de partida serio y
-          luego llevarla a una identidad mas creible, mas clara y mejor enfocada.
-        </p>
-      </div>
-
-      <div class="case-grid" id="templateGrid">
-        <article class="case-loading">Cargando demos...</article>
-      </div>
-    </section>
-
-    <div class="section-rule" aria-hidden="true"></div>
-
-    <section class="section shell" id="arranque">
-      <div class="section-head" data-reveal>
-        <p class="section-label">Oferta inicial</p>
-        <h2>Si tu negocio ya necesita verse mas serio online, esta es la forma mas simple de arrancar conmigo.</h2>
-        <p>
-          Para el primer proyecto me interesa cerrar alcances claros, avanzar rapido y dejar una
-          pagina que ya sirva para recibir mensajes, reservas o cotizaciones sin prometer un
-          sistema enorme desde el dia uno.
-        </p>
-      </div>
-
-      <div class="offer-grid">
-        <article class="offer-card" data-reveal>
-          <div class="offer-top">
-            <div>
-              <small>Mas directo</small>
-              <h3>Landing comercial</h3>
-            </div>
-            <span class="offer-badge">Para decidir rapido</span>
-          </div>
-          <p>
-            Para profesionales o negocios que necesitan una pagina clara, confiable y enfocada en
-            un solo objetivo principal.
-          </p>
-          <ul class="offer-list">
-            <li>Promesa principal, servicios y prueba de confianza.</li>
-            <li>CTA listo para WhatsApp, reservas o cotizacion.</li>
-            <li>Una ronda de ajustes sobre la misma base.</li>
-          </ul>
-          <div class="offer-actions">
-            <span>Ideal para consultores, especialistas y marcas personales.</span>
-            <a class="btn btn-secondary" href="#brief" data-lead-offer="Landing comercial">Trabajar esta opcion</a>
-          </div>
-        </article>
-
-        <article class="offer-card" data-reveal style="--delay: 1;">
-          <div class="offer-top">
-            <div>
-              <small>Mas completo</small>
-              <h3>Sitio por sector</h3>
-            </div>
-            <span class="offer-badge">La mejor base para negocio local</span>
-          </div>
-          <p>
-            Partimos de una estructura fuerte y la aterrizamos a tu caso real con tono, secciones,
-            imagenes y CTA mejor pensados.
-          </p>
-          <ul class="offer-list">
-            <li>Adaptacion sobre una demo alineada con tu tipo de negocio.</li>
-            <li>Bloques para servicios, catalogo, reservas o contacto.</li>
-            <li>Ruta clara para publicar sin rehacer todo despues.</li>
-          </ul>
-          <div class="offer-actions">
-            <span>Ideal para panaderias, gimnasios, restaurantes y estudios.</span>
-            <a class="btn btn-secondary" href="#brief" data-lead-offer="Sitio por sector">Quiero esta base</a>
-          </div>
-        </article>
-
-        <article class="offer-card" data-reveal style="--delay: 2;">
-          <div class="offer-top">
-            <div>
-              <small>Mas flexible</small>
-              <h3>Ajuste y mantenimiento</h3>
-            </div>
-            <span class="offer-badge">Para seguir afinando</span>
-          </div>
-          <p>
-            Si ya tienes una base o quieres que la pagina no quede congelada, dejo una estructura
-            lista para seguir corrigiendo mensaje, CTA e imagenes.
-          </p>
-          <ul class="offer-list">
-            <li>Correcciones de copy, secciones clave y cierres comerciales.</li>
-            <li>Edicion mas simple sobre una base ya organizada.</li>
-            <li>Mejoras pensadas para evolucionar la oferta con el tiempo.</li>
-          </ul>
-          <div class="offer-actions">
-            <span>Ideal para negocios que ya venden, pero comunican flojo online.</span>
-            <a class="btn btn-secondary" href="#brief" data-lead-offer="Ajuste y mantenimiento">Quiero afinar mi sitio</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="lead-layout" id="brief">
-        <article class="lead-panel" data-reveal>
-          <p class="panel-label">Brief rapido</p>
-          <h3>Te digo por WhatsApp que demo te conviene y como arrancaria tu proyecto.</h3>
-          <p class="lead-copy">
-            No necesitas mandar un documento largo. Con estos datos ya puedo responderte con una
-            propuesta inicial mucho mas aterrizada.
-          </p>
-
-          <form class="lead-form" id="leadForm" data-whatsapp-number="573007561667">
-            <label class="lead-field">
-              <span>Tu nombre</span>
-              <input type="text" name="name" placeholder="Ej. Carlos" />
-            </label>
-
-            <label class="lead-field">
-              <span>Negocio o marca</span>
-              <input type="text" name="business" placeholder="Ej. Panaderia San Miguel" />
-            </label>
-
-            <label class="lead-field">
-              <span>Sector</span>
-              <select name="sector">
-                <option value="">Selecciona uno</option>
-                <option value="Panaderia">Panaderia</option>
-                <option value="Restaurante">Restaurante</option>
-                <option value="Gimnasio">Gimnasio</option>
-                <option value="Estudio creativo">Estudio creativo</option>
-                <option value="Profesional o consultor">Profesional o consultor</option>
-                <option value="Otro">Otro</option>
-              </select>
-            </label>
-
-            <label class="lead-field">
-              <span>Objetivo principal</span>
-              <select name="goal">
-                <option value="">Selecciona uno</option>
-                <option value="recibir mas mensajes por WhatsApp">Recibir mas mensajes</option>
-                <option value="mostrar mejor mis servicios">Mostrar mejor mis servicios</option>
-                <option value="mostrar productos, reservas o catalogo">Mostrar productos o reservas</option>
-                <option value="mejorar una web que ya existe">Mejorar una web existente</option>
-              </select>
-            </label>
-
-            <label class="lead-field">
-              <span>Tipo de ayuda</span>
-              <select name="offer" id="leadOffer">
-                <option value="Quiero una propuesta inicial">Quiero una propuesta inicial</option>
-                <option value="Landing comercial">Landing comercial</option>
-                <option value="Sitio por sector">Sitio por sector</option>
-                <option value="Ajuste y mantenimiento">Ajuste y mantenimiento</option>
-              </select>
-            </label>
-
-            <label class="lead-field">
-              <span>Ciudad</span>
-              <input type="text" name="city" placeholder="Ej. Manizales" />
-            </label>
-
-            <label class="lead-field lead-field-full">
-              <span>Web o Instagram actual</span>
-              <input type="text" name="reference" placeholder="Opcional: URL o @usuario" />
-            </label>
-
-            <div class="lead-form-actions lead-field-full">
-              <button class="btn btn-primary" type="submit">Pedir propuesta por WhatsApp</button>
-              <p class="lead-form-status" id="leadFormStatus">
-                Esto no envia datos a terceros: solo te abre WhatsApp con el mensaje ya ordenado.
-              </p>
-            </div>
-          </form>
-        </article>
-
-        <aside class="lead-side" data-reveal style="--delay: 1;">
-          <article class="lead-note">
-            <p class="panel-label">Lo que recibes</p>
-            <h3>La primera conversacion ya deberia dejar claro si esto te sirve o no.</h3>
-            <ul class="lead-note-list">
-              <li>Una demo recomendada segun tu sector o tipo de oferta.</li>
-              <li>Un alcance pequeno para arrancar sin enredarnos.</li>
-              <li>Un CTA principal definido para que la pagina tenga direccion.</li>
-              <li>Una ruta mas clara entre demo, ajuste y publicacion.</li>
-            </ul>
-          </article>
-
-          <article class="lead-note">
-            <p class="panel-label">Ideal para cerrar primero</p>
-            <h3>No necesitas vender todo el sistema desde la primera llamada.</h3>
-            <p>
-              El cierre mas sano para el primer cliente es una pagina concreta, una promesa bien
-              ordenada y una entrega rapida. Lo grande puede venir despues, pero la confianza se
-              gana mostrando criterio en una version pequena y bien resuelta.
-            </p>
-          </article>
         </aside>
       </div>
     </section>
 
-    <div class="section-rule" aria-hidden="true"></div>
-
-    <section class="section editor-section shell" id="editor">
-      <div class="editor-copy" data-reveal>
-        <p class="section-label">Editor y mantenimiento</p>
-        <h2>La pagina puede seguir afinandose sin perder la estructura que ya esta funcionando.</h2>
-        <p>
-          Si el proyecto necesita una capa mas practica, dejo versiones listas para ajustar
-          contenido, promesa, imagenes y CTA sin desmontar todo. Eso ayuda a mantener vivo el
-          sitio y a mejorar la oferta conforme el negocio crece.
-        </p>
-
-        <ul class="editor-points">
-          <li>Cambiar propuesta, servicios, CTA o datos clave sin rehacer toda la pagina.</li>
-          <li>Escoger una demo desde un punto central antes de abrir el editor.</li>
-          <li>Seguir corrigiendo textos e imagenes directamente sobre la plantilla.</li>
-          <li>Guardar cambios locales en el navegador para no perder avances.</li>
-        </ul>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="editor.html" target="_blank" rel="noopener noreferrer">Elegir demo</a>
-          <a class="btn btn-secondary" href="#plantillas">Ver plantillas</a>
-        </div>
+    <section class="proof-strip">
+      <div class="container proof-grid">
+        <article class="proof-item">
+          <p class="proof-label">Productos y sitios</p>
+          <p class="proof-value">3 frentes comerciales</p>
+        </article>
+        <article class="proof-item">
+          <p class="proof-label">Verticales</p>
+          <p class="proof-value">Inmobiliario, belleza, salud y pymes</p>
+        </article>
+        <article class="proof-item">
+          <p class="proof-label">Stack frecuente</p>
+          <p class="proof-value">React, Vercel, Firebase y Supabase</p>
+        </article>
       </div>
+    </section>
 
-      <div class="editor-side" data-reveal style="--delay: 1;">
-        <div class="editor-preview">
-          <div class="editor-preview-bar">
-            <span></span>
-            <span></span>
-            <span></span>
+    <section class="light-section" id="productos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Trabajo aplicado</p>
+            <h2 class="section-title">Casos seleccionados</h2>
           </div>
-          <div class="editor-preview-body">
-            <small>Editor comercial</small>
-            <strong>Tu sitio no queda congelado despues de publicarse.</strong>
-            <p>
-              Puedes mover la promesa principal, corregir el cierre comercial, actualizar servicios
-              o ajustar imagenes sin romper la estructura que ya ayuda a vender mejor.
-            </p>
+          <p class="section-copy">Estos son los productos que me interesa vender y mostrar: un manejador de propiedades, un SaaS para barberias y paginas web comerciales con una demo real implementada.</p>
+        </div>
 
-            <div class="preview-steps">
-              <article>
-                <span>01</span>
-                <div>
-                  <strong>Elegir la base correcta</strong>
-                  <p>Partes de una estructura pensada para tu tipo de negocio.</p>
-                </div>
-              </article>
-              <article>
-                <span>02</span>
-                <div>
-                  <strong>Aterrizarla con criterio</strong>
-                  <p>Se adapta mensaje, tono, CTA y contenido al caso real.</p>
-                </div>
-              </article>
-              <article>
-                <span>03</span>
-                <div>
-                  <strong>Seguir afinando</strong>
-                  <p>La pagina queda mas viva y mas util para cambios futuros.</p>
-                </div>
-              </article>
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-topline">
+              <span class="case-code">P01</span>
+              <span class="case-icon">🏢</span>
             </div>
+            <h3>PropTech Manager</h3>
+            <p>Producto para administracion de inmuebles: clientes, propiedades, contratos, pagos, depositos y seguimiento operativo desde un solo flujo.</p>
+            <div class="case-footer">
+              <span class="badge">Producto activo</span>
+              <a class="btn btn-dark" href="https://proptech-manager.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo →</a>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-topline">
+              <span class="case-code">B02</span>
+              <span class="case-icon">💈</span>
+            </div>
+            <h3>BarberIA</h3>
+            <p>SaaS para barberias con agenda en tiempo real, panel por rol, pagina publica por slug y automatizaciones de WhatsApp. Pensado para venderse como herramienta operativa.</p>
+            <div class="case-footer">
+              <span class="badge open">Demo con acceso</span>
+              <a class="btn btn-dark" href="https://barber-ia-nine.vercel.app" target="_blank" rel="noopener noreferrer">Abrir app →</a>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-topline">
+              <span class="case-code">W03</span>
+              <span class="case-icon">🌐</span>
+            </div>
+            <h3>Paginas web para pymes</h3>
+            <p>Sitios comerciales para negocios pequenos y profesionales independientes. La demo de Monica muestra una pagina real con servicios, WhatsApp, FAQ y presencia profesional.</p>
+            <div class="case-footer">
+              <span class="badge open">Incluye demos</span>
+              <details class="demo-disclosure">
+                <summary>Ver demos</summary>
+                <div class="demo-list">
+                  <a href="https://monica-valencia.vercel.app" target="_blank" rel="noopener noreferrer">Monica Valencia <span>→</span></a>
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="proceso">
+      <div class="container process-layout">
+        <div>
+          <p class="kicker">Sistema de trabajo</p>
+          <h2 class="process-title">Del proceso manual al producto usable.</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <strong>01 · Mapeo</strong>
+            <span>Entiendo clientes, datos, tareas repetidas y puntos donde hoy se pierde tiempo.</span>
+          </div>
+          <div class="step">
+            <strong>02 · Prototipo</strong>
+            <span>Construyo una version navegable y usable antes de meter complejidad innecesaria.</span>
+          </div>
+          <div class="step">
+            <strong>03 · Lanzamiento</strong>
+            <span>Despliego, reviso fricciones reales y dejo una base preparada para crecer.</span>
           </div>
         </div>
-
-        <div class="editor-templates" id="editorTemplateGrid"></div>
       </div>
     </section>
 
-    <div class="section-rule" aria-hidden="true"></div>
-
-    <section class="section shell" id="proceso">
-      <div class="section-head" data-reveal>
-        <p class="section-label">Proceso</p>
-        <h2>Asi paso de una idea o una demo a una pagina con mas peso visual y mejor recorrido comercial.</h2>
-        <p>
-          No se trata de llenar bloques. Se trata de decidir que debe verse primero, que debe dar
-          confianza despues y como debe cerrarse la accion para que la experiencia tenga mas
-          intencion.
-        </p>
-      </div>
-
-      <div class="approach-grid">
-        <article class="approach-card" data-reveal>
-          <small>01</small>
-          <h3>Aterrizamos la oferta.</h3>
-          <p>
-            Definimos que vendes, que parte debe quedar clarisima en segundos y que fricciones hay
-            que bajar desde el inicio.
-          </p>
-        </article>
-
-        <article class="approach-card" data-reveal style="--delay: 1;">
-          <small>02</small>
-          <h3>Ordenamos la jerarquia.</h3>
-          <p>
-            Organizamos secciones, pruebas, ritmo visual y CTA para que la pagina avance hacia la
-            accion en vez de distraer.
-          </p>
-        </article>
-
-        <article class="approach-card" data-reveal style="--delay: 2;">
-          <small>03</small>
-          <h3>Le damos presencia.</h3>
-          <p>
-            Ajustamos color, aire, bloques y contraste para que el sitio se sienta mas fino y mas
-            confiable sin perder claridad.
-          </p>
-        </article>
-
-        <article class="approach-card" data-reveal style="--delay: 3;">
-          <small>04</small>
-          <h3>La dejamos util despues.</h3>
-          <p>
-            Si luego cambias enfoque, servicios o cierre comercial, ya hay una base lista para
-            corregir sin volver a empezar.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <div class="section-rule" aria-hidden="true"></div>
-
-    <section class="section shell" id="faq">
-      <div class="section-head" data-reveal>
-        <p class="section-label">Preguntas</p>
-        <h2>Las dudas normales antes de invertir en una pagina que realmente ayude a vender mejor.</h2>
-      </div>
-
-      <div class="faq-grid">
-        <article class="faq-card" data-reveal>
-          <h3>Todo sale de la misma estructura?</h3>
-          <p>
-            No. Uso bases cuando ayudan a avanzar mas rapido, pero cada pagina se ajusta en tono,
-            copy, recorrido, CTA y direccion visual segun el negocio.
-          </p>
-        </article>
-
-        <article class="faq-card" data-reveal style="--delay: 1;">
-          <h3>Despues quien cambia textos y fotos?</h3>
-          <p>
-            Si el proyecto usa editor, la misma estructura queda lista para seguir corrigiendo
-            contenido sin tocar toda la pagina otra vez.
-          </p>
-        </article>
-
-        <article class="faq-card" data-reveal style="--delay: 2;">
-          <h3>Esto sirve solo para negocios locales?</h3>
-          <p>
-            No. Tambien funciona para consultores, profesionales y marcas personales que necesitan
-            una presencia mas clara, mas seria y mejor orientada al contacto.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="contact-cta shell" id="contacto" data-reveal>
-      <div class="contact-copy">
-        <p class="section-label">Contacto</p>
-        <h2>Si tu negocio ya tiene valor, hagamos que online se vea a la misma altura.</h2>
-        <p>
-          Te ayudo a escoger la estructura correcta, definir la promesa principal y convertir eso
-          en una pagina mas clara, mas premium y mas util para recibir mensajes, reservas o
-          cotizaciones.
-        </p>
-
-        <div class="cta-actions">
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/573007561667?text=Hola,%20quiero%20trabajar%20mi%20sitio%20web."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hablar por WhatsApp
-          </a>
-          <a class="btn btn-secondary" href="#brief">Enviar brief rapido</a>
+    <section class="final-section" id="contacto">
+      <div class="container final-cta">
+        <div>
+          <p class="kicker">Contacto</p>
+          <h2>Si tu negocio depende de Excel, WhatsApp y memoria, hay un producto por construir.</h2>
+          <p>Puedo ayudarte a convertir ese proceso en una herramienta propia, o en una landing que venda mejor sin parecer una plantilla repetida.</p>
         </div>
-      </div>
-
-      <div class="contact-notes">
-        <article class="contact-note">
-          <span>Lo que trabajamos</span>
-          <strong>Promesa, estructura, direccion visual, CTA y una experiencia mas convincente.</strong>
-        </article>
-        <article class="contact-note">
-          <span>Ideal para</span>
-          <strong>Negocios locales, servicios profesionales, consultorias y marcas personales.</strong>
-        </article>
-        <article class="contact-note">
-          <span>Resultado esperado</span>
-          <strong>Una pagina que se vea mas seria y haga mas facil pasar de la visita al contacto.</strong>
-        </article>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:pipevv999@gmail.com">Escribirme por correo</a>
+          <a class="btn btn-light" href="https://proptech-manager.vercel.app" target="_blank" rel="noopener noreferrer">Ver PropTech</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner shell">
-      <span>Andres Valencia</span>
-      <span>Portafolio comercial para negocios y profesionales</span>
-      <span id="footerYear"></span>
+  <footer>
+    <div class="container footer-row">
+      <span>Andres Valencia · Productos digitales para negocios reales</span>
+      <span>PropTech Manager · BarberIA · Paginas web para pymes</span>
     </div>
   </footer>
-
-  <script type="module" src="assets/js/site.js"></script>
-  <script src="assets/js/universal-template-editor.js"></script>
 </body>
 </html>
