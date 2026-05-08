@@ -83,12 +83,9 @@
       .hero-grid,.fit-grid,.plan-grid,.case-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
     }
     @media (max-width:760px){
-      body{padding-bottom:64px}
+      body{padding-bottom:0}
       .nav-actions{display:none}
-      .mobile-sticky{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px;background:rgba(10,10,10,.94);border-top:1px solid var(--line)}
-      .mobile-sticky a{min-height:44px;display:grid;place-items:center;font-weight:850;text-transform:uppercase;font-size:.78rem}
-      .mobile-sticky .wa{background:var(--orange);color:#050505}
-      .mobile-sticky .diag{border:1px solid var(--line)}
+      .mobile-sticky{display:none}
     }
   
     .floating-wa{position:fixed;right:18px;bottom:20px;z-index:140;background:#25d366;color:#050505;font-weight:900;padding:12px 16px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
@@ -102,7 +99,7 @@
 <body>
   <header class="topbar">
     <nav class="wrap nav" aria-label="Navegacion principal">
-      <a class="brand" href="index.html#inicio"><img src="assets/brand/av-logo.svg" alt="Logo AV" /><span>Andres Valencia<br/>PropTech</span></a>
+      <a class="brand" href="index.html#inicio"><img src="assets/brand/av-logo-v2.svg" alt="Logo AV" /><span>Andres Valencia<br/>PropTech</span></a>
       <div class="nav-actions"><a class="btn btn-ghost" href="index.html">Volver al portafolio</a><a class="btn btn-orange" href="#lead-form" data-track="click_primary_cta_proptech">Quiero diagnostico 20 min</a></div>
     </nav>
   </header>
@@ -217,11 +214,6 @@
   </main>
 
   <a class="floating-wa" href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20informacion." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_floating_proptech" aria-label="Contactar por WhatsApp">WhatsApp</a>
-
-  <div class="mobile-sticky">
-    <a class="wa" href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20mi%20diagnostico%20de%2020%20min%20para%20PropTech%20Manager." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_sticky_proptech">WhatsApp</a>
-    <a class="diag" href="#lead-form" data-track="click_diag_sticky_proptech">Diagnostico</a>
-  </div>
 
   <script>
     (function(){

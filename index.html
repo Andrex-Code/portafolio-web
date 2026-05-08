@@ -54,7 +54,7 @@
     .proof{background:#101010;color:var(--cream);padding:54px 0}.proof h2{margin:0 0 22px}.proof-note{margin:0 0 18px;color:rgba(255,248,237,.76);max-width:72ch}.proof-note b{color:#fff}.testimonials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:20px}.testimonials article,.faq article{border:1px solid var(--wline);padding:20px;background:rgba(255,255,255,.04)}.testimonials h3{margin:0 0 10px;font-size:1.16rem}.testimonials p{margin:0 0 12px}.testimonials ul{margin:0;padding-left:18px}.testimonials li{margin:6px 0;color:rgba(255,248,237,.86)}.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.faq h3{margin:0 0 8px}.fit{background:#090909;color:var(--cream);padding:44px 0}.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.fit-card{border:1px solid var(--wline);padding:22px;background:rgba(255,255,255,.03)}.fit-card h2{margin:0 0 12px;font-size:2.1rem}.fit-card ul{margin:0;padding-left:18px}.fit-card li{margin:8px 0}.fit-no{border-color:rgba(255,77,18,.45)}
     .lead-form{display:grid;gap:10px;margin-top:12px}.lead-form input,.lead-form select,.lead-form textarea{width:100%;padding:11px;border:1px solid #111;background:#fff8ed;color:#111}.lead-form button{cursor:pointer}
     .mobile-sticky-cta{display:none}
-    @media (max-width:900px){body{padding-bottom:68px}.pricing-grid,.testimonials,.faq,.fit-grid{grid-template-columns:1fr}.mobile-sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:120;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px;background:rgba(0,0,0,.92);border-top:1px solid var(--wline)}.mobile-sticky-cta a{min-height:44px;display:grid;place-items:center;font-weight:900;font-size:.78rem;text-transform:uppercase}.mobile-sticky-cta .wa-btn{background:var(--orange);color:#050505}.mobile-sticky-cta .diag-btn{border:1px solid var(--wline)}}
+    @media (max-width:900px){.pricing-grid,.testimonials,.faq,.fit-grid{grid-template-columns:1fr}}
   
     .process-grid{align-items:start}
     .steps{align-items:stretch}
@@ -62,7 +62,7 @@
     .floating-wa{position:fixed;right:18px;bottom:20px;z-index:140;background:#25d366;color:#050505;font-weight:900;padding:12px 16px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
     .floating-wa:hover{transform:translateY(-2px)}
     @media (max-width:1200px){.steps{grid-template-columns:repeat(2,minmax(0,1fr));}.step{min-height:0}}
-    @media (max-width:900px){.mobile-sticky-cta{grid-template-columns:1fr}.mobile-sticky-cta .diag-btn{background:var(--black);color:var(--cream)}.floating-wa{display:none}}
+    @media (max-width:900px){.floating-wa{display:none}}
     @media (max-width:700px){.steps{grid-template-columns:1fr}}
   </style>
 
@@ -73,7 +73,7 @@
 <body>
   <header class="topbar">
     <nav class="wrap nav" aria-label="Navegacion principal">
-      <a class="brand" href="#inicio"><span class="brand-mark"><img src="assets/brand/av-logo.svg" alt="Logo AV" /></span><span class="brand-copy"><span>Andres</span><span>Valencia</span></span></a>
+      <a class="brand" href="#inicio"><span class="brand-mark"><img src="assets/brand/av-logo-v2.svg" alt="Logo AV" /></span><span class="brand-copy"><span>Andres</span><span>Valencia</span></span></a>
       <div class="nav-links"><a class="active" href="#inicio">Inicio</a><a href="#proptech">PropTech</a><a href="#ecosistema">Productos</a><a href="#demos">Demos</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a></div>
       <a class="nav-cta" href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20un%20diagnostico%20de%2020%20minutos." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_nav">WhatsApp ahora</a><button class="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
     </nav>
@@ -90,8 +90,8 @@
           <div class="local-note"><div class="note"><strong>Que puedo hacer por ti</strong><span>Definir una propuesta digital clara para captar mas clientes y trabajar con menos friccion.</span></div><div class="note"><strong>En que me enfoco</strong><span>Estrategia, experiencia y desarrollo para que cada entrega sea util desde el dia uno.</span></div><div class="note"><strong>Quien soy</strong><span>Soy estudiante de Ingenieria en Sistemas y Computacion en la Universidad Tecnologica de Pereira, enfocado en construir soluciones digitales con impacto real.</span></div></div>
         </div>
         <div class="hero-art">
-          <div class="paper-block"></div><div class="paint-orange"></div><div class="paint-teal"></div><div class="portrait"></div><div class="stamp"><img src="assets/brand/av-logo.svg" alt="AV" /></div><div class="signature">Andres<br>Valencia</div>
-          <div class="proptech-card"><img src="assets/brand/av-logo.svg" alt="Logo AV Andres Valencia" /><h3>Lo que puedo construir para tu negocio</h3><p>Paginas de alto impacto, flujos automatizados y sistemas internos para que vendas mejor y operes sin caos.</p></div>
+          <div class="paper-block"></div><div class="paint-orange"></div><div class="paint-teal"></div><div class="portrait"></div><div class="stamp"><img src="assets/brand/av-logo-v2.svg" alt="AV" /></div><div class="signature">Andres<br>Valencia</div>
+          <div class="proptech-card"><img src="assets/brand/av-logo-v2.svg" alt="Logo AV Andres Valencia" /><h3>Lo que puedo construir para tu negocio</h3><p>Paginas de alto impacto, flujos automatizados y sistemas internos para que vendas mejor y operes sin caos.</p></div>
         </div>
       </div>
     </section>
@@ -175,7 +175,6 @@
 
 <section class="cta" id="contacto"><div class="wrap cta-grid"><h2 class="display">Quieres ordenar tu operacion y vender mejor?<span>Te muestro como en una llamada de 20 minutos.</span></h2><div><p>Revisamos tu proceso actual, detectamos cuellos de botella y te propongo una ruta simple de implementacion.</p><a class="btn btn-black" href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20agendar%20mi%20diagnostico%20de%2020%20min." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_contact">Escribir por WhatsApp</a><form class="lead-form" id="lead-form"><input type="text" name="nombre" placeholder="Nombre" required /><input type="tel" name="whatsapp" placeholder="WhatsApp" required /><input type="email" name="email" placeholder="Correo" required /><select name="interes" required><option value="">Que quieres resolver primero?</option><option>Captacion comercial</option><option>Operacion y control</option><option>Cobros y cartera</option><option>Automatizacion</option></select><select name="tamano_negocio" required><option value="">Tamano del negocio</option><option>1-5 personas</option><option>6-20 personas</option><option>21+ personas</option></select><select name="urgencia" required><option value="">Urgencia del proyecto</option><option>Esta semana</option><option>Este mes</option><option>Estoy explorando</option></select><textarea name="reto" rows="3" placeholder="Principal reto de tu negocio"></textarea><input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" /><input type="hidden" name="landing_page" /><input type="hidden" name="attribution_channel" /><input type="hidden" name="lead_score" /><input type="hidden" name="lead_tier" /><button class="btn btn-orange" id="contact-submit-btn" type="submit" data-track="form_submit">Solicitar diagnostico</button></form></div><ul class="contact-list"><li><b>WA</b> <a href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20informacion." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_list">+57 301 100 1225</a></li><li><b>MAIL</b> <a href="mailto:pipevv999@gmail.com" data-track="click_mail">pipevv999@gmail.com</a></li><li><b>TEL</b> <a href="tel:+573011001225" data-track="click_tel">+57 301 100 1225</a></li><li><b>in</b> <a href="https://www.linkedin.com/in/andresvalencia-dev/" target="_blank" rel="noopener noreferrer">linkedin.com/in/andresvalencia-dev</a></li></ul></div></section>
   </main>
-<div class="mobile-sticky-cta"><a class="diag-btn" href="#lead-form" data-track="click_diag_sticky">Diagnostico</a></div>
 <a class="floating-wa" href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20informacion." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_floating" aria-label="Contactar por WhatsApp">WhatsApp</a>
 <script>
 (function(){
