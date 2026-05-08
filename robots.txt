@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andresvalencia.dev/sitemap.xml
+Sitemap: https://andresvalencia.vercel.app/sitemap.xml
