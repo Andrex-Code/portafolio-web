@@ -39,3 +39,11 @@ desktop.ini
 
 # Vercel local linkage
 .vercel/
+
+# Codex local artifacts
+.agents/
+.codex-artifacts/
+
+# Local content drafts and exports
+Plantillas Paginas/
+av-system/deploy/*/assets/

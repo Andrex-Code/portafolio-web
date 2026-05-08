@@ -11,7 +11,13 @@
   <meta property="og:description" content="De Excel y chats sueltos a una operacion inmobiliaria trazable y controlada." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
-  <meta property="og:image" content="assets/brand/av-logo.svg" />
+  <meta property="og:url" content="https://andresvalencia.dev/proptech-manager.html" />
+  <meta property="og:image" content="https://andresvalencia.dev/assets/images/andres-valencia-portrait.jpeg" />
+  <meta property="og:image:alt" content="Landing comercial de PropTech Manager por Andres Valencia" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Landing PropTech Manager | Andres Valencia" />
+  <meta name="twitter:description" content="Implementacion para inmobiliarias con foco en cobro, control y trazabilidad operativa." />
+  <meta name="twitter:image" content="https://andresvalencia.dev/assets/images/andres-valencia-portrait.jpeg" />
   <meta name="theme-color" content="#0a0a0a" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,7 +90,14 @@
       .mobile-sticky .wa{background:var(--orange);color:#050505}
       .mobile-sticky .diag{border:1px solid var(--line)}
     }
+  
+    .floating-wa{position:fixed;right:18px;bottom:20px;z-index:140;background:#25d366;color:#050505;font-weight:900;padding:12px 16px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+    .floating-wa:hover{transform:translateY(-2px)}
+    @media (max-width:760px){.floating-wa{bottom:74px;right:12px;padding:11px 14px}}
   </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Landing PropTech Manager","url":"https://andresvalencia.dev/proptech-manager.html","inLanguage":"es-CO"},{"@type":"SoftwareApplication","name":"PropTech Manager","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","priceCurrency":"COP","price":"2900000"}}]}
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -116,10 +129,10 @@
 
     <section class="section section-paper" id="fit">
       <div class="wrap">
-        <h2 class="display">Para quien es y para quien no</h2>
+        <h2 class="display">Para quien es y como lo adapto</h2>
         <div class="fit-grid">
-          <article class="fit-card"><h3>Para quien es</h3><ul><li>Inmobiliarias con 10 a 300 inmuebles.</li><li>Equipos con cobros y seguimiento manual.</li><li>Negocios que quieren control real y trazabilidad.</li></ul></article>
-          <article class="fit-card"><h3>Para quien no es</h3><ul><li>Quien busca solo una "app bonita" sin ejecutar cambios.</li><li>Equipos sin responsable interno del proyecto.</li><li>Empresas que no quieren medir ni mejorar su operacion.</li></ul></article>
+          <article class="fit-card"><h3>Enfoque principal</h3><ul><li>Propietarios con 3 a 5 inmuebles.</li><li>Inmobiliarias que inician y ya tienen 10 o mas inmuebles.</li><li>Equipos con cobros y seguimiento manual.</li></ul></article>
+          <article class="fit-card"><h3>Adaptable a otros negocios</h3><ul><li>Si alquilas carros u otro activo, adapto una app al flujo que necesitas.</li><li>Tambien puedo implementar software para comidas rapidas.</li><li>Se ajusta a reservas, clientes, pagos, entregas y reportes.</li></ul></article>
         </div>
       </div>
     </section>
@@ -137,8 +150,8 @@
 
     <section class="section" id="casos">
       <div class="wrap">
-        <h2 class="display">Prueba verificable de implementacion</h2>
-        <p class="case-note"><b>Nota:</b> estos casos muestran evidencia tecnica y de proceso. Los testimonios con nombre/empresa se publican cuando el cliente autoriza su uso.</p>
+        <h2 class="display">Casos de uso y ejemplos</h2>
+        <p class="case-note"><b>Nota:</b> aqui te muestro como se ve la implementacion por tipo de negocio para que evalues si te sirve.</p>
         <div class="case-grid">
           <article class="case"><h3>PropTech Manager (piloto)</h3><p>Estado actual: operacion centralizada en un flujo unico por estado.</p><ul><li>4 modulos conectados.</li><li>3 niveles de acceso.</li><li>1 flujo de cobro con trazabilidad.</li></ul></article>
           <article class="case"><h3>BarberIA (SaaS vertical)</h3><p>Estado actual: reservas y seguimiento centralizado en demo funcional.</p><ul><li>2 automatizaciones activas.</li><li>1 historial completo por cliente.</li><li>Panel semanal de operacion.</li></ul></article>
@@ -202,6 +215,8 @@
       </div>
     </section>
   </main>
+
+  <a class="floating-wa" href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20informacion." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_floating_proptech" aria-label="Contactar por WhatsApp">WhatsApp</a>
 
   <div class="mobile-sticky">
     <a class="wa" href="https://wa.me/573011001225?text=Hola%20Andres,%20quiero%20mi%20diagnostico%20de%2020%20min%20para%20PropTech%20Manager." target="_blank" rel="noopener noreferrer" data-track="click_whatsapp_sticky_proptech">WhatsApp</a>
@@ -285,7 +300,46 @@
             lead_tier: leadScore.tier,
             attribution_channel: attributionChannel
           });
-          alert('Gracias. Te escribo en breve para agendar el diagnostico.');
+          var leadPayload={
+            page:window.location.pathname,
+            submitted_at:new Date().toISOString(),
+            attribution_channel:attributionChannel,
+            lead_score:leadScore.score,
+            lead_tier:leadScore.tier,
+            form:{
+              nombre:fd.get('nombre') || '',
+              whatsapp:fd.get('whatsapp') || '',
+              empresa:fd.get('empresa') || '',
+              tamano_negocio:fd.get('tamano_negocio') || '',
+              urgencia:fd.get('urgencia') || '',
+              reto:fd.get('reto') || ''
+            },
+            utm:utmData
+          };
+          var webhookUrl=(window.AV_LEADS_WEBHOOK || '').trim();
+          if(webhookUrl){
+            fetch(webhookUrl,{
+              method:'POST',
+              headers:{'Content-Type':'application/json'},
+              body:JSON.stringify(leadPayload),
+              keepalive:true
+            }).catch(function(){});
+          }
+          var leadSummary=[
+            'Nueva solicitud PropTech Manager',
+            'Nombre: '+(leadPayload.form.nombre || '-'),
+            'WhatsApp: '+(leadPayload.form.whatsapp || '-'),
+            'Empresa: '+(leadPayload.form.empresa || '-'),
+            'Tamano: '+(leadPayload.form.tamano_negocio || '-'),
+            'Urgencia: '+(leadPayload.form.urgencia || '-'),
+            'Reto: '+(leadPayload.form.reto || '-'),
+            'Canal: '+(attributionChannel || 'direct'),
+            'Lead score: '+leadScore.score+' ('+leadScore.tier+')'
+          ].join('\n');
+          var waLeadUrl='https://wa.me/573011001225?text='+encodeURIComponent(leadSummary);
+          track('lead_whatsapp_redirect_proptech',{lead_score:leadScore.score,lead_tier:leadScore.tier});
+          window.open(waLeadUrl,'_blank','noopener,noreferrer');
+          alert('Gracias. Abrimos WhatsApp con tus datos para enviarlos en un mensaje.');
           form.reset();
           utmKeys.forEach(function(key){
             var input = form.querySelector('[name="'+key+'"]');
