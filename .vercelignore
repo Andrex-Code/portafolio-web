@@ -1,17 +1,17 @@
-/*
+# Local and internal folders
+.agents/
+.claude/
+.codex-artifacts/
+.vercel/
+av-system/
+studio/
+tools/
+scripts/
+docs/
+catalog/
+Plantillas Paginas/
+templates/
 
-# Public portfolio pages
-!/index.html
-!/proptech-manager.html
-
-# Public assets
-!/assets/
-!/assets/**
-
-# SEO technical files
-!/robots.txt
-!/sitemap.xml
-
-# Vercel config
-!/.vercelignore
-!/vercel.json
+# Internal working notes
+*.md
+!README.md
